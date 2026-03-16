@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-export default function PokemonCard({pokemonUrl, classN}){
+import PokemonInfo from "./PokemonInfo"
+export default function PokemonCard({pokemonUrl, pokemonDef, classN}){
     const [pokemon, setPokemon] = useState()
+
     const getPokemon = async() =>
     {
         const response = await fetch(pokemonUrl)
@@ -12,16 +14,13 @@ export default function PokemonCard({pokemonUrl, classN}){
     console.log("PokemonCard_pokemon: ", pokemon)
 
     useEffect(()=>{
-        getPokemon()
-    },[])
+        pokemonDef ? setPokemon(pokemonDef) : getPokemon()
+    },[pokemonDef])
     
     return (
         <article className={`pokemon-card type-${classN}`}>
             <Link to={`/pokemons/${pokemon?.id}`} className="pokemon-link">
-            {/*Gjør om til en komponent*/} 
-            <h3>{pokemon?.name}</h3>
-            <img src={pokemon?.sprites?.front_default} alt={pokemon?.name} />
-            <p>#00{pokemon?.id}</p>
+            <PokemonInfo id={pokemon?.id}  name={pokemon?.name} sprite={pokemon?.sprites?.front_default} /> 
             </Link>
         </article>
 

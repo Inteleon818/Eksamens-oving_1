@@ -1,9 +1,8 @@
-//import { FontAwesomeIcon } from '@fontawesome/react-fontawesome'
-// import { faMagnifyingGlass } from '@fontawesome/free-solid-svg-icons'   
-// import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'   
+import { useState } from 'react'
 import { redirect, useOutletContext } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { useState } from "react";
 export default function SearchBar({searchQuery, setSearchQuery}){
 
     const navigate = useNavigate();
@@ -25,7 +24,7 @@ export default function SearchBar({searchQuery, setSearchQuery}){
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Search for a pokemon..." onChange={handleChange} />
-            <button type="submit" onClick={handleClick}>Search</button>
+            <button type="submit" onClick={handleClick}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
         </form>
     )
 }
