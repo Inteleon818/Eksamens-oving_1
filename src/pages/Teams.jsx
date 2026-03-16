@@ -5,17 +5,16 @@ export default function Teams(){
     const [teamArray, setTeamArray] = useState()
 
     useEffect(()=>{
-        //localStorage.setItem('teams', JSON.stringify(teams))
         const teams = localStorage.getItem('teams');
         setTeamArray(JSON.parse(teams));
     },[])
 
-    console.log(teamArray)
+    console.log("Teams_teamArray: ", teamArray)
 
     return(
         <main className="team-cards">
             <h1>Teams</h1>
-            {teamArray?.map((team) => <TeamCard name={team.name} />)}
+            {teamArray?.map((team) => <TeamCard key={team.name} name={team.name} />)}
         </main>
     )
 }

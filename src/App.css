@@ -98,3 +98,8 @@
     max-width: 100%;
   }
 }
+
+.team-link{
+  text-decoration: none;
+  color: black;
+}

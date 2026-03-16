@@ -6,6 +6,7 @@ import Pokemon from './pages/Pokemon'
 import Teams from './pages/Teams'
 import Type from './pages/Type'
 import SearchResults from './pages/SearchResults'
+import Team from './pages/Team'
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='teams' element={<Teams />} />
-        <Route path='types/:type' element={<Type/>} />
+        <Route path='teams/:team' element={<Team />} />
+        <Route path='types/:type' element={<Type />} />
         <Route path='searchresults' element={<SearchResults />}>
           <Route path=':pokemon' element={<h1>Pokemon fra Search</h1>} />
         </Route>
