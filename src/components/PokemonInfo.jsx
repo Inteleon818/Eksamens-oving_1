@@ -4,7 +4,7 @@ export default function PokemonInfo({id, name, sprite})
         <>
         <h3>{name}</h3>
         <img src={sprite} alt={name} />
-        <p>#00{id}</p>
+        <p>#{id}</p>
         </>
     )
 }

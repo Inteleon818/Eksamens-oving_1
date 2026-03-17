@@ -103,3 +103,61 @@
   text-decoration: none;
   color: black;
 }
+
+/*
+.pokemon_main {
+  h1,p {
+    display: inline-block;
+  }
+
+  h1 {
+    padding-right: 11rem;
+  }
+
+  p {
+    text-align: right;
+  }
+}
+*/
+
+.pokemon-main {
+  display: grid;
+  grid-template-areas:
+    "pokemon-name-and-id pokemon-name-and-id pokemon-name-and-id pokemon-type-title pokemon-type-title pokemon-type-title"
+    "pokemon-image pokemon-image pokemon-types pokemon-types pokemon-types pokemon-types"
+    "pokemon-image pokemon-image pokemon-stats pokemon-stats pokemon-stats pokemon-stats"
+    "pokemon-image pokemon-image pokemon-stats pokemon-stats pokemon-stats pokemon-stats"
+    "pokemon-image pokemon-image pokemon-stats pokemon-stats pokemon-stats pokemon-stats"
+    "pokemon-abilities pokemon-abilities pokemon-abilities pokemon-abilities pokemon-abilities pokemon-abilities"
+    "pokemon-abilities pokemon-abilities pokemon-abilities pokemon-abilities pokemon-abilities pokemon-abilities";
+}
+
+.pokemon-name-and-id {
+  grid-area: pokemon-name-and-id;
+}
+
+.pokemon-type-title {
+  grid-area: pokemon-type-title;
+}
+
+.pokemon-image {
+  grid-area: pokemon-image;
+}
+
+.pokemon-types {
+  grid-area: pokemon-types;
+  display: flex;
+  gap: 1rem;
+  .type-card {
+    height: 5.2rem;
+    max-width: 300px;
+  }
+}
+
+.pokemon-stats {
+  grid-area: pokemon-stats;
+}
+
+.pokemon-abilities {
+  grid-area: pokemon-abilities;
+}
